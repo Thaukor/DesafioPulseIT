@@ -1,0 +1,38 @@
+﻿@model Evento;
+@{
+    ViewData[ "Title" ] = "Generar invitación";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Generar invitación</h1>
+    <form id="crearInvitacion" asp-action="create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group">
+            <label asp-for="Titulo" class="control-label">Título evento</label>
+            <input name="Titulo" class="form-control" required />
+            <span asp-validation-for="Titulo" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Descripcion" class="control-label">Descripción del evento</label>
+            <input name="Descripcion" class="form-control" required />
+            <span asp-validation-for="Descripcion" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Fecha" class="control-label">Descripción del evento</label>
+            <input name="Fecha" type="date" class="form-control" required />
+            <span asp-validation-for="Fecha" class="text-danger"></span>
+        </div>
+
+        <div id="" class="form-group">
+            <label class="control-label">Inserte correos separados por punto y coma</label>
+            <textarea class="form-control" name="emails" placeholder="ejemplo1@ejemplo.com;ejemplo2@ejemplo2.com"></textarea>
+        </div>
+
+        <div class="form-group mt-2">
+            <button type="submit" class="btn btn-primary">Crear evento</button>
+        </div>
+    </form>
+</div>

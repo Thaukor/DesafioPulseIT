@@ -1,0 +1,20 @@
+﻿@model Evento
+
+<h3 class="text-center">Invitaciones del evento @Model.Titulo</h3>
+
+<form asp-action="Enviar" asp-controller="EnviarInvitacion" method="post">
+    <div class="form-group">
+        <label name="id" class="control-label">ID Evento</label>
+        <input value="@Model.Id" readonly/>
+    </div>
+
+    <div id="" class="form-group">
+        <label class="control-label">Inserte correos separados por punto y coma</label>
+        <textarea class="form-control" name="emails" placeholder="ejemplo1@ejemplo.com;ejemplo2@ejemplo2.com"></textarea>
+    </div>
+
+    <div class="form-group mt-2">
+        <button type="submit" class="btn btn-primary">Enviar invitaciones</button>
+    </div>
+</form>
+

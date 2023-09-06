@@ -1,0 +1,23 @@
+﻿@model List<Evento>
+
+
+<h2>Listado de eventos</h2>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th scope="col">Evento</th>
+			<th scope="col">Acción</th>
+		</tr>
+	</thead>
+	<tbody>
+
+	@foreach ( var evento in Model )
+	{
+		<tr>
+				<td> @evento.Titulo </td>
+				<td> <a href="EnviarInvitacion/Enviar/@evento.Id" class="btn btn-success"> Invitar </a> </td>
+		</tr>
+	}
+	</tbody>
+</table>

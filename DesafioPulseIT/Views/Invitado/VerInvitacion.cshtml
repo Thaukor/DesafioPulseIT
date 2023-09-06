@@ -1,0 +1,30 @@
+﻿@model Invitado
+@{
+    ViewData[ "Title" ] = "Revisar invitación";
+    var evento = ViewBag.datosEvento;
+}
+
+<div class="">
+    <h3 class="text-center">Invitación al evento @evento.Titulo</h3>
+    <h5 class="text-center">@evento.Descripcion</h5>
+
+
+    <p>¿Asistirás al evento?</p>
+    <form asp-action="edit">
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="asistencia" id="asistencia1" value="1">
+            <label class="form-check-label" for="asistencia">
+                Asistiré
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="asistencia" id="asistencia2" value="0">
+            <label class="form-check-label" for="asistencia">
+                No asistiré
+            </label>
+        </div>
+        <div class="form-group mt-2">
+            <button type="submit" class="btn btn-primary">Responder invitación</button>
+        </div>
+    </form>
+</div>
